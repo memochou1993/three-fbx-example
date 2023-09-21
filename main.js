@@ -1,8 +1,8 @@
 import './style.css'
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
-import Stats from 'three/examples/jsm/libs/stats.module'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import Stats from 'three/addons/libs/stats.module';
 
 const scene = new THREE.Scene()
 scene.add(new THREE.AxesHelper(5))
@@ -22,7 +22,7 @@ const camera = new THREE.PerspectiveCamera(
 )
 camera.position.set(0.8, 0.6, 1.0)
 
-const renderer = new THREE.WebGLRenderer()
+const renderer = new THREE.WebGLRenderer({ alpha: true })
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
